@@ -1,0 +1,351 @@
+/**
+ * 亮子财经·经济衰退检测仪 - 黑金主题样式
+ * Economic Recession Detector - Black & Gold Theme CSS
+ */
+
+:root {
+    --primary-gold: #ffc107;
+    --dark-bg: #000000;
+    --card-bg: #111111;
+    --border-gold: #ffc107;
+    --text-light: #ffffff;
+    --text-muted: #6c757d;
+    --success-green: #198754;
+    --warning-yellow: #ffc107;
+    --danger-red: #dc3545;
+}
+
+/* 全局样式 */
+body {
+    background-color: var(--dark-bg) !important;
+    color: var(--text-light) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: var(--dark-bg) !important;
+    border-bottom: 2px solid var(--border-gold) !important;
+    box-shadow: 0 2px 10px rgba(255, 193, 7, 0.3);
+}
+
+.navbar-brand {
+    color: var(--text-light) !important;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.navbar-brand .text-warning {
+    color: var(--primary-gold) !important;
+}
+
+/* 卡片样式 */
+.card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-gold) !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 193, 7, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 30px rgba(255, 193, 7, 0.2);
+    transform: translateY(-2px);
+}
+
+.card-title {
+    color: var(--primary-gold) !important;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* 风险显示组件 */
+.risk-display {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.risk-score {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 0 20px currentColor;
+}
+
+.risk-level {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+/* 指标项目样式 */
+.indicator-item {
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: rgba(255, 193, 7, 0.05);
+    border: 1px solid rgba(255, 193, 7, 0.1);
+    transition: all 0.2s ease;
+}
+
+.indicator-item:hover {
+    background: rgba(255, 193, 7, 0.1);
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+.indicator-label {
+    font-size: 0.85rem;
+    color: var(--text-muted) !important;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.indicator-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* 颜色状态 */
+.text-success {
+    color: var(--success-green) !important;
+}
+
+.text-warning {
+    color: var(--warning-yellow) !important;
+}
+
+.text-danger {
+    color: var(--danger-red) !important;
+}
+
+/* 按钮样式 */
+.btn-outline-warning {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+    background: transparent;
+}
+
+.btn-outline-warning:hover {
+    background-color: var(--primary-gold);
+    color: var(--dark-bg);
+}
+
+/* 表单控件 */
+.form-select {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-gold) !important;
+    color: var(--text-light) !important;
+}
+
+.form-select:focus {
+    border-color: var(--primary-gold) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25) !important;
+}
+
+/* 警告框样式 */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.15);
+    color: #ff6b7a;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* 图表容器 */
+canvas {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+/* 表格样式 */
+.table-responsive {
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 193, 7, 0.1);
+}
+
+.table {
+    color: var(--text-light) !important;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    border-color: rgba(255, 193, 7, 0.2) !important;
+    background: rgba(255, 193, 7, 0.1);
+    color: var(--primary-gold) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    border-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 193, 7, 0.05) !important;
+}
+
+.table tbody td {
+    border-color: rgba(255, 193, 7, 0.1) !important;
+    vertical-align: middle;
+}
+
+/* 风险等级标签 */
+.risk-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.risk-badge.low {
+    background: rgba(25, 135, 84, 0.2);
+    color: var(--success-green);
+    border: 1px solid rgba(25, 135, 84, 0.3);
+}
+
+.risk-badge.medium {
+    background: rgba(255, 193, 7, 0.2);
+    color: var(--warning-yellow);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.risk-badge.high {
+    background: rgba(220, 53, 69, 0.2);
+    color: var(--danger-red);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* 页脚样式 */
+footer {
+    background-color: var(--dark-bg) !important;
+    border-top: 2px solid var(--border-gold) !important;
+    margin-top: 3rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .risk-score {
+        font-size: 2.5rem;
+    }
+    
+    .risk-level {
+        font-size: 1.25rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .indicator-item {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .risk-score {
+        font-size: 2rem;
+    }
+    
+    .navbar-brand span {
+        display: block;
+        font-size: 0.9rem;
+    }
+}
+
+/* 加载动画 */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-gold);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 数据加载状态 */
+.data-loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+}
+
+.data-loading .loading-spinner {
+    margin-right: 0.5rem;
+}
+
+/* 图表工具提示 */
+.chart-tooltip {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-gold) !important;
+    color: var(--text-light) !important;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 滚动条样式 */
+.table-responsive::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: rgba(255, 193, 7, 0.5);
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-gold);
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card {
+        border: 1px solid #000 !important;
+        background: white !important;
+    }
+    
+    .navbar,
+    footer {
+        display: none !important;
+    }
+}

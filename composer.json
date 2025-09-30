@@ -1,0 +1,54 @@
+{
+    "name": "liangzi/economic-recession-detector",
+    "description": "亮子财经·经济衰退检测仪 PHP版本 - 基于FRED实时数据的智能经济分析系统",
+    "type": "project",
+    "keywords": ["economic", "recession", "detector", "fred", "data", "analysis"],
+    "homepage": "https://github.com/liangzi/economic-recession-detector-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "亮子财经",
+            "email": "contact@liangzi.finance",
+            "homepage": "https://liangzi.finance"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "EconomicDetector\\": "includes/"
+        },
+        "files": [
+            "includes/EconomicAnalyzer.php",
+            "includes/FREDDataFetcher.php",
+            "includes/LanguageManager.php",
+            "includes/RiskCalculator.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EconomicDetector\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs-check": "phpcs --standard=PSR2 includes/",
+        "cs-fix": "phpcbf --standard=PSR2 includes/",
+        "serve": "php -S localhost:8000 -t .",
+        "install-deps": "composer install --no-dev --optimize-autoloader"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
